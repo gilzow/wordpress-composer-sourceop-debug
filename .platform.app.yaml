@@ -22,7 +22,8 @@ variables:
     session.cookie_lifetime: '2000000'
     pcre.backtrack_limit: '200000'
     pcre.recursion_limit: '200000'
-
+  env:
+    PSH_SOP_UPDATE_BRANCH: "barbfoo"
 hooks:
     build: |
         set -e
@@ -88,7 +89,7 @@ source:
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
     test:
       command: |
-        export PSH_SOP_UPDATE_BRANCH="barbfoo" && curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 trigger-sopupdate; } 3<&
+        curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 trigger-sopupdate; } 3<&
 
 
 
