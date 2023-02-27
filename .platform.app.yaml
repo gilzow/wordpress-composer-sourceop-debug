@@ -95,5 +95,11 @@ source:
         #python3 --version
         #alias python=python3
         curl -sS https://platform.sh/cli/installer | php
+
+        if [[ "${PATH}" != *".platformsh"* ]]; then
+          echo "psh installer not in PATH"
+          export PATH="${HOME}/.platformsh/bin:${PATH}"
+        fi
+
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 trigger-sopupdate; } 3<&0
 
