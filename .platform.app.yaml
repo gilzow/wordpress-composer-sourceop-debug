@@ -96,7 +96,7 @@ source:
         #alias python=python3
         curl -sS https://platform.sh/cli/installer | php
 
-        if [[ "${PATH}" != *".platformsh"* ]]; then
+        if [ "${PATH}" != *".platformsh"* ]; then
           echo "psh installer not in PATH"
           export PATH="${HOME}/.platformsh/bin:${PATH}"
         fi
