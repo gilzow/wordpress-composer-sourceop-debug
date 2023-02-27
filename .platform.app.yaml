@@ -30,7 +30,6 @@ hooks:
         # Copy manually-provided plugins into the plugins directory.
         # This allows manually-provided and composer-provided plugins to coexist.
         rsync -a plugins/* wordpress/wp-content/plugins/
-        curl -sS https://platform.sh/cli/installer | php
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
@@ -95,5 +94,6 @@ source:
         #echo "Python 3?"
         #python3 --version
         #alias python=python3
+        curl -sS https://platform.sh/cli/installer | php
         curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 trigger-sopupdate; } 3<&0
 
