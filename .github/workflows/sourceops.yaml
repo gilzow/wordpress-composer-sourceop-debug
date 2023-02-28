@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: 'Run source ops'
         id: run-source-op
-        uses: platformsh/gha-run-sourceops-update@prunetest
+        uses: platformsh/gha-run-sourceops-update@main
         with:
           github_token: ${{ secrets.TEMPLATES_GITHUB_TOKEN }}
           platformsh_token: ${{ secrets.TEMPLATES_CLI_TOKEN }}
