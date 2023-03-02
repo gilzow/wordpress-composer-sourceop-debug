@@ -12,7 +12,7 @@ jobs:
   create-auto-pr:
     name: "Creates an auto merging PR when the branch is updated"
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'platformsh-templates' }}
+    if: ${{ github.repository_owner == 'gilzow' }}
     steps:
       - name: 'Prep the repo for autoPR'
         id: prepautopr
